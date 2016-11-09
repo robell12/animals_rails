@@ -1,0 +1,15 @@
+<%= form_for [@person, @animal] do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name, required: true %>
+	<br />
+	<%= f.label :species %>
+	<%= f.text_field :species, required: true %>
+	<br />
+	<%= f.label :age %>
+	<%= f.number_field :age %>
+	<br />
+	<%= f.label :alive %>
+	<%= f.select :alive, ['True', 'False'] %>
+	<br />
+	<%= f.submit %>
+<% end %>

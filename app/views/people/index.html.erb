@@ -1,0 +1,16 @@
+<h1>Welcome Human Person</h1>
+<h3>Log in so we know that you are a people</h3>
+<hr />
+<% if @people.any? %>
+<ul>
+	<% @people.each do |person| %>
+		<li>
+			<%= link_to person.name, person_path(person) %>
+		</li>
+	<% end %>
+</ul>
+<% else %>
+<h1>No people found</h1>
+<% end %>
+
+<%= link_to 'New Person Login', new_person_path %>

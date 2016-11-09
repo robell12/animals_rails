@@ -1,0 +1,26 @@
+<% if @person.errors.any? %>
+	<h5> 
+		<%= pluralize(@person.errors.count, 'Error', 'Errors') %> Creating Person
+	</h5>
+	<ul>
+		<% @person.errors.full_messages.each do |message| %>
+		<li><%= message %></li>
+		<% end %>
+	</ul>
+<% end %>
+
+<%= form_for @person do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+	<br />
+	<%= f.label :gender %>
+	<%= f.text_field :gender %>
+	<br />
+	<%= f.label :age %>
+	<%= f.text_field :age %>
+	<br />
+	<%= f.label :alive %>
+	<%= f.check_box :alive %>
+	<br />
+	<%= f.submit %>
+<% end %>
